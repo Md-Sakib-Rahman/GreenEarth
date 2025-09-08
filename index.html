@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green Earth</title>
-    <link rel="shortcut icon" href="./assets/Favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/Favicon.svg" type="image/x-icon" />
     <!-- tailwind script -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- fontawesome cdn -->
@@ -16,7 +16,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[#F0FDF4] overflow-hidden">
+  <body class="bg-[#F0FDF4]">
     <header class="mb-10">
       <!-- Navbar -->
       <div>
@@ -106,7 +106,122 @@
         />
       </section>
     </header>
+    <main>
+      <div class="text-center max-lg:hidden font-bold">
+        <h1 class="text-3xl">Choose Your Tree</h1>
+      </div>
+      <section class="min-lg:grid min-lg:grid-cols-12 gap-4 px-10">
+        <div
+          class="col-span-2 flex min-lg:flex-col max-lg:flex-wrap max-lg:justify-center max-lg:items-center justify-start items-start gap-2"
+        >
+          <h1 class="font-bold max-lg:w-full text-center">Categories</h1>
+         <div id="cat-container" class="max-lg:text-center">
+           
+         </div>
+        </div>
+        <div class="text-center min-lg:hidden mt-10 font-bold ">
+          <h1 class="text-3xl">Choose Your Tree</h1>
+        </div>
+        <div
+          id="prod-container"
+          class="col-span-8 p-2 rounded-xl grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 gap-10"
+        >
+          
+          </div>
+          <!-- asdasd -->
+        </div>
+        <div class="col-span-2 bg-white p-2 rounded-xl">
+          <h1 class="text-xl mb-2 font-bold">Your Cart</h1>
+          <div id="cart div">
+            <div class="cart-container px-2 mb-2">
+              <div
+                class="cart-item bg-[#F0FDF4] p-1 flex justify-between items-center rounded-lg"
+              >
+                <div>
+                  <h2 class="text-sm font-bold">Mango Tree</h2>
+                  <h2 class="text-gray-500">
+                    $<span>500</span> x <span>1</span>
+                  </h2>
+                </div>
+                <div>
+                  <button class="deletecart">
+                    <i class="fa-solid fa-xmark text-gray-500"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="flex justify-between items-center">
+            <h2>Total:</h2>
+            <h2>$<span>1000</span></h2>
+          </div>
+        </div>
+      </section>
 
+      <section class="my-20 text-[#1F2937]">
+        <h1 class="text-center font-bold mb-10 text-3xl">About the Campaign</h1>
+        <div class="flex max-md:flex-col justify-center items-center gap-5 mx-auto w-[60%] max-md:w-[80%] max-sm:w-[95%]">
+          <div class="w-[50%] max-md:w-[80%] max-sm:w-[95%]">
+            <img src="./assets/about.png" alt="" />
+          </div>
+          <div class="w-[50%] max-md:w-[80%] max-sm:w-[90%]">
+            <p>
+              Green Earth is a global tree plantation initiative dedicated to
+              fighting climate change. Since our start, we’ve planted over
+              500,000 trees worldwide. By joining our campaign, you help restore
+              forests, create habitats for wildlife, and combat global warming.
+            </p>
+            <ul class="mt-2 list-disc ml-4">
+              <li>Restoration of natural habitats</li>
+              <li>Improvement of air quality</li>
+              <li>Support for local communities</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="bg-[#CFF0DC] text-center py-20">
+        <h1 class="mb-10 text-3xl font-bold" >Our Impact</h1>
+        <div class="w-full flex justify-center max-md:flex-col items-center gap-10">
+          <div class="bg-[#FFFFFF] w-[20%] max-md:w-[60%] max-sm:w-[90%] py-10 ">
+            <h2 class="text-green-700 text-2xl font-bold mb-2">500K+</h2>
+            <p  class="text-gray-600 text-sm">Trees Planted</p>
+          </div>
+          <div class="bg-[#FFFFFF] w-[20%] max-md:w-[60%] max-sm:w-[90%] py-10 ">
+            <h2 class="text-green-700 text-2xl font-bold mb-2">120+</h2>
+            <p class="text-gray-600 text-sm">Communities Involved</p>
+          </div>
+          <div class="bg-[#FFFFFF] w-[20%] max-md:w-[60%] max-sm:w-[90%] py-10 ">
+            <h2 class="text-green-700 text-2xl font-bold mb-2">30+</h2>
+            <p  class="text-gray-600 text-sm">Country Reached</p>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <section class="bg-[#166534] py-16 rounded-t-xl">
+          <h2 class="text-white text-3xl text-center mb-10 font-bold">Plant a Tree Today</h2>
+          <div class="w-[30%] max-xl:w-[50%] max-sm:w-[80%] mx-auto bg-[#15803D] rounded-xl">
+            <form class="flex flex-col gap-10 justify-center items-center py-10 w-[80%] mx-auto" action="">
+              <input class="bg-white w-full mx-auto  py-2 px-2 rounded-xl" type="text" placeholder="Your Name">
+              <input class="bg-white w-full mx-auto  py-2 px-2 rounded-xl" type="email" placeholder="Your Email Address">
+              <select class="bg-white w-full mx-auto  py-2 px-2 rounded-xl" name="NumberOfTree" id="NumberOfTree">
+                <option class="bg-white " value="Number Of Tree">Number Of Tree</option>
+                <option class="bg-white " value="10">10</option>
+                <option class="bg-white " value="20">20</option>
+              </select>
+              <button type="submit" class="bg-[#FACC15] text-[#15803D] py-2 px-4 rounded-3xl w-full">Donate Now</button>
+            </form>
+          </div>
+      </section>
+      <section class="bg-[#14532D] text-center py-5 text-white">
+        <h2>© 2025 Green Earth. All Rights Reserved.</h2>
+      </section>
+    </footer>
+    <script src="./scripts/dynamicContent/fetch.js"></script>
     <script src="./scripts/UI/style.js"></script>
+    
   </body>
 </html>

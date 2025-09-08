@@ -1,3 +1,4 @@
+// Mobile Nav bar
 const burgerMenu = document.getElementById("burger-menu");
 const mobileNav = document.getElementById("mobile-nav");
 const body = document.querySelector("body");
@@ -15,3 +16,4 @@ body.addEventListener("click", () => {
   mobileNav.classList.remove("right-0");
   mobileNav.classList.add("-right-[400px]");
 });
+
