@@ -18,7 +18,7 @@
   </head>
   <body class="bg-[#F0FDF4]">
     <!-- modal -->
-    <section id="modal" class=" fixed bg-black/50 z-50 bg-red w-full h-[100%] flex justify-center items-center hidden">
+    <section id="modal" class=" fixed bg-black/50 z-50 bg-red w-full h-[100%]  justify-center items-center hidden">
      <div class="bg-white w-[40%] mx-auto p-10 flex flex-col justify-start items-start gap-5">
       <h1 class="text-2xl font-bold">Bnayan Tree</h1>
       <div class="bg-[url('https://i.ibb.co.com/FkH6MRhR/banyan-min.jpg')] w-full h-[400px] bg-cover bg-center bg-no-repeat ">
@@ -146,29 +146,13 @@
         </div>
         <div class="col-span-2 bg-white p-2 rounded-xl">
           <h1 class="text-xl mb-2 font-bold">Your Cart</h1>
-          <div id="cart div">
-            <div class="cart-container px-2 mb-2">
-              <div
-                class="cart-item bg-[#F0FDF4] p-1 flex justify-between items-center rounded-lg"
-              >
-                <div>
-                  <h2 class="text-sm font-bold">Mango Tree</h2>
-                  <h2 class="text-gray-500">
-                    $<span>500</span> x <span>1</span>
-                  </h2>
-                </div>
-                <div>
-                  <button class="deletecart">
-                    <i class="fa-solid fa-xmark text-gray-500"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div id="cart-div">
+            
           </div>
           <hr />
           <div class="flex justify-between items-center">
             <h2>Total:</h2>
-            <h2>$<span>1000</span></h2>
+            <h2>$<span id="totalCost"></span></h2>
           </div>
         </div>
       </section>

@@ -3,6 +3,52 @@ const urlCat = "https://openapi.programming-hero.com/api/categories";
 const catContainer = document.getElementById('cat-container');
 const prodContainer = document.getElementById('prod-container')
 const modalsection= document.getElementById('modal');
+let cart = [];
+function updateCartUI(){
+ const cartDiv = document.getElementById('cart-div')
+ const totalCost = document.getElementById('totalCost')
+ let total=0;
+ cartDiv.innerHTML=""
+ if (cart.length === 0){
+    totalCost.textContent=""
+ }else{
+     cart.forEach((item, index) => {
+    total += (item.price*item.quantity);
+    const itemDiv = document.createElement('div')
+    itemDiv.classList.add(
+        "cart-container",
+        "px-2",
+        "mb-2"
+    )
+    itemDiv.innerHTML=`
+        <div
+        class="cart-item bg-[#F0FDF4] p-1 flex justify-between items-center rounded-lg"
+        >
+                <div>
+                  <h2 class="text-sm font-bold">${item.name}</h2>
+                  <h2 class="text-gray-500">
+                    $<span>${item.price}</span> x <span>${item.quantity}</span>
+                  </h2>
+                </div>
+                <div>
+                  <button class="deletecart" data-index=${index}>
+                    <i class="fa-solid fa-xmark text-gray-500"></i>
+                  </button>
+                </div>
+        </div>
+    `
+    cartDiv.appendChild(itemDiv)
+    
+    const deleteBtn= itemDiv.querySelector('.deletecart')
+     deleteBtn.addEventListener('click', (e)=>{
+            const index= e.currentTarget.dataset.index;
+            cart.splice(index, 1);
+            updateCartUI();
+        })
+    totalCost.textContent=total;
+ })
+ }
+}
 async function fetchProd(q='plants'){
     try{
         const url=urlAll+q;
@@ -51,7 +97,7 @@ function updateProd(prods){
               </div>
             </div>
             <div class="w-full">
-              <button id="btn${prod.id}" class="atcBtn bg-[#15803D] text-white w-full py-4 rounded-xl">
+              <button  class="atcBtn bg-[#15803D] text-white w-full py-4 rounded-xl">
                 Add to Cart
               </button>
             </div>
@@ -84,9 +130,23 @@ function updateProd(prods){
                 modalsection.classList.add('hidden');
                 modalsection.classList.remove('flex');
             });
-
+            
             
         });
+        atcBTN.addEventListener('click', ()=>{
+            let existingItem = cart.find(item => item.id === prod.id)
+            if(existingItem){
+                existingItem.quantity+=1;
+            }else{
+                cart.push({
+                    id: prod.id,
+                    name: prod.name,
+                    price: prod.price,
+                    quantity: 1
+                })
+            }
+            updateCartUI();
+        })
         
 
     })
