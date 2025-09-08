@@ -50,11 +50,18 @@ function updateCartUI(){
  }
 }
 async function fetchProd(q='plants'){
+    prodContainer.classList.add('hidden')
+    const prodLoading = document.getElementById('prod-loading');
+    if(prodLoading) prodLoading.classList.remove('hidden');
     try{
         const url=urlAll+q;
         const res = await fetch(url)
         const prods = await res.json()
+        if(prodLoading) prodLoading.classList.add('hidden');
+        prodContainer.classList.remove('hidden')
+        console.log(prods.plants)
         return prods.plants;
+        
     } catch(err) {
         console.log("Error => ", err)
     }
