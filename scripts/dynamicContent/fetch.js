@@ -122,7 +122,7 @@ function updateProd(prods){
             modalsection.classList.remove('hidden');
             modalsection.classList.add('flex');
             modalsection.innerHTML = `
-                <div class="bg-white w-[40%] mx-auto p-10 flex flex-col justify-start items-start gap-5 rounded-xl shadow-lg">
+                <div class="bg-white w-[40%] max-sm:text-sm max-sm:w-[80%] mx-auto p-10 flex flex-col justify-start items-start gap-5 rounded-xl shadow-lg">
                     <h1 class="text-2xl font-bold">${prod.name}</h1>
                     <div class="bg-[url('${prod.image}')] w-full h-[400px] bg-cover bg-center bg-no-repeat"></div>
                     <p class="text-xl"><span class="font-bold">Category:</span> ${prod.category}</p>
@@ -140,10 +140,13 @@ function updateProd(prods){
             
             
         });
-        atcBTN.addEventListener('click', ()=>{
+        atcBTN.addEventListener('click', (e)=>{
             let existingItem = cart.find(item => item.id === prod.id)
             if(existingItem){
                 existingItem.quantity+=1;
+                
+                alert(`${existingItem.name} added to cart`)
+                
             }else{
                 cart.push({
                     id: prod.id,
@@ -151,8 +154,11 @@ function updateProd(prods){
                     price: prod.price,
                     quantity: 1
                 })
+                alert(`${prod.name} added to cart`)
+                
             }
             updateCartUI();
+            
         })
         
 
