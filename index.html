@@ -17,6 +17,20 @@
     />
   </head>
   <body class="bg-[#F0FDF4]">
+    <!-- modal -->
+    <section id="modal" class=" fixed bg-black/50 z-50 bg-red w-full h-[100%] flex justify-center items-center hidden">
+     <div class="bg-white w-[40%] mx-auto p-10 flex flex-col justify-start items-start gap-5">
+      <h1 class="text-2xl font-bold">Bnayan Tree</h1>
+      <div class="bg-[url('https://i.ibb.co.com/FkH6MRhR/banyan-min.jpg')] w-full h-[400px] bg-cover bg-center bg-no-repeat ">
+        <!-- <img class="w-[50%] " src="https://i.ibb.co.com/FkH6MRhR/banyan-min.jpg" alt=""> -->
+      </div>
+      
+      <p class=" text-xl "><span class="font-bold">Category:</span> shade tree</p>
+      <p class=" text-xl"><span class="font-bold">price:</span>500</p>
+      <p class=" text-xl"><span class="font-bold">Description:</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, blanditiis!</p>
+      <button id="modalBtn" class="self-end bg-gray-200 text-black border-2 rounded-lg px-2 py-2 border-gray-400 mt-10">Close</button>
+     </div>
+    </section>
     <header class="mb-10">
       <!-- Navbar -->
       <div>
@@ -54,7 +68,7 @@
           <!-- Mobile Menu -->
           <div
             id="mobile-nav"
-            class="fixed -right-[400px] top-15 flex flex-col justify-start items-start gap-10 pt-10 px-4 w-[50vw] h-[100vh] bg-[#15803D]/40 backdrop-blur-xl z-50 border-[#FACC15] border-l-4 min-sm:hidden transition-all ease-in-out duration-200 min-sm:hidden"
+            class="fixed -right-[400px] top-15 flex flex-col justify-start items-start gap-10 pt-10 px-4 w-[50vw] h-[100vh] bg-[#15803D]/40 backdrop-blur-xl z-40 border-[#FACC15] border-l-4 min-sm:hidden transition-all ease-in-out duration-200 min-sm:hidden"
           >
             <div
               class="flex flex-col text-white justify-start items-start gap-10 max-lg:text-xl min-sm:hidden"
